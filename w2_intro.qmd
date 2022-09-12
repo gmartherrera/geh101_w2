@@ -1,0 +1,1279 @@
+---
+title: "Introduction to Geography"
+institute: "Lehman College"
+format: 
+  revealjs:
+      theme: simple
+      logo: lehmanlogo.png
+      self-contained: true
+slide-number: true
+transition: fade
+progress: true
+touch: true
+editor: source
+---
+
+```{r, echo=FALSE, include=FALSE}
+
+library(here)
+library(tidyverse)
+library(kableExtra)
+library(sf)
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+
+# What is geography?
+
+<br>
+
+Integrative science focused on the interactions and relationships between factor and variables that influence distribution of phenomena.
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Natural sciences: 
+
+* Geology
+
+* Biology
+:::
+
+::: {.column width="50%"}
+
+Social sciences: 
+
+* Anthropology
+
+* Sociology
+
+:::
+
+::::
+
+## Physical geography
+
+<br>
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+* Hydrology
+
+* Meteorology
+
+* Vulcanology
+
+* Ecology
+
+:::
+
+:::{.column width="50%"}
+
+![Dr atl, *Erupción del Paricutín* (?)](dr_atl.png){align="right"}
+:::
+
+::::
+
+## Human geography
+
+<br>
+
+:::: {.columns}
+
+:::{.column width="40%"}
+
+* Cultural geography
+
+* Human ecology
+
+* Political ecology
+
+:::
+
+:::{.column width="60%"}
+
+![Interviews are fundamental techniques for human geography](entrevista.JPG){}
+
+:::
+
+::::
+
+# Historical origins
+
+<br>
+
+Humans around he world have employed different tools to explore and interact with their surroundings, resulting in the development of geographical knowledge.
+
+## Islamic world
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+* Pilgrimage
+
+* Commercial networks
+
+* Military expansion
+
+* Important contributors:
+
+  - al-Idrisi  (1099-1154)
+  - ibn-Battuta (1304-1378)
+  - ibn-Khaldun (1332-1406)
+
+:::
+
+::: {.column width="40%"}
+
+![ by Al Jazeera](Al_Jazeera.jpg){}
+
+:::
+
+::::
+
+---
+
+## China
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+* Imperial expansion
+* Buddhist pilgrimage to India 
+* Commerce across Indian ocean and Africa
+
+* Important contributors: 
+
+  -Phei Hsiu (A.D. 267)
+
+:::
+
+::: {.column width="60%"}
+
+![Map of the Thirteen Provinces of China *circa* 1800](China.jpg){}
+
+:::
+
+::::
+
+## Japan and Korea
+
+<br>
+
+:::: {.columns}
+
+:::{.column}
+
+* Multinational collaboration (China, Japan, Korea, and Islamic world)
+
+* Vast geographical knowledge 
+
+* Maritime trade
+
+:::
+
+:::{.column}
+
+![The Kangnido](kangnido.png){}
+
+:::
+
+::::
+
+
+## Mesoamerica
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+* Imperial expansion
+* Agricultural methods
+* Cosmology
+
+:::
+
+::: {.column width="60%"}
+
+![Tenochtitlan depicted in Mendoza Codex](mexica.jpg){}
+
+:::
+
+::::
+
+## Greeks and Romans {.smaller}
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+* Library of Alexandria (most relevant in the Mediterranean).
+
+* Eratosthenes (276 - 194 B.C.: Γεωγραφíα (*Earth description*) 
+
+* Hipparchus: Use a grid to pinpoint places in a precise way.   
+
+* Ptolemy: 
+
+  - Also a director of the library in Alexandria (A.D. 127 - 150)
+
+  - Notable contribution: *Geography*
+
+:::
+
+::: {.column width="60%"}
+
+
+![Reconstruction of Hipparchus grid model (Hoffmann, 2017)](hipparchus.png){}
+
+:::
+
+::::
+
+---
+
+![The world according to Eratosthenes](Mappa_di_Eratostene.jpg){}
+
+
+---
+
+![Reconstruction of Ptolemy map by Johannes de Armsshein (1482)](ptolemy.png){}
+
+## European geography
+
+<br>
+
+World exploration, great voyages, and imperial conquests (XV century)
+
+![](euro_map.png){fig-align="center"}
+
+
+---
+
+## Bernhardus Varenius (1622 - 1650) 
+
+<br>
+
+* Germany
+
+* Contributions:
+
+  - *Geographia Generalis* (1650)
+  - *Descsriptio Regni Japoniae* (1649)
+  - *Appendix de religione Siamensium, ex Descriptione Belgica Iodoci Schoutenii* (1649)
+
+---
+
+<br>
+
+:::: {.columns}
+
+:::{.column width="50%"}
+
+**General geography**
+
+<br>
+
+- Focus on one topic
+
+- Contemporary: topical of systematic geography
+
+- Spatial distribution of biophysical variables (vegetation, climate, soils)
+
+:::    
+   
+:::{.column width="50%"}
+
+**Special geography**
+
+<br>
+
+- Description and analysis by categories
+
+- Contemporary: regional geography 
+
+- Understanding the biophysical features and then include other factors (population, economy, politics)
+
+:::
+
+::::
+
+## Alexander von Humboldt (1769 - 1859) {.smaller}
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+* Netherlands 
+
+* *Cosmos*: Integration of physical variables and biotic and cultural distributions
+
+<br>
+
+* Huge academic legacy:
+
+  + Influenced George Perkins Marsh, precursor of the environmental movement in the US.
+  
+  + Contributed to understanding climate - biological distribution (biogeography).
+
+:::
+
+:::{.column}
+
+![Photo: Esri](humboldt2.jpg){}
+
+:::
+
+::::
+
+---
+
+<br>
+
+<br>
+
+![Humboldt identified patterns in plant distributions as a result of biophysical variables.](humboldt.jpg){fig-align="center"}  
+
+
+# Break
+
+# Geographical analysis
+
+---
+
+<br>
+
+Geographic knowledge and science has been, and still is, fundamental for exploring and interacting with our environment at multiple scales.
+
+<br>
+
+:::{.incremental}
+
+* Where = spatial location
+
+* What = event
+
+* When = time (temporal location)
+
+* Why = causation - interactions
+
+* Why there = spatial correlation
+
+:::
+
+:::{.notes}
+
+where: Spatial location - position
+what: Event or process
+When: Temporal dimension
+Why: Causation - interactions
+Why there: Spatial correlation, proximity, teleconnections (climate change), complexity 
+
+:::
+
+# Area analysis
+
+<br>
+
+Focuses on describing, exploring, and gathering geographical data of places.
+
+Area analysis use three concepts to organize and describe this data:
+ 
+:::{.incremental}
+
+* Site
+* Situation
+* Region
+
+:::
+
+---
+
+## Site
+
+<br>
+
+Precise location using a coordinate system (latitude and longitude)
+
+Cultural properties of the place (symbolic meaning)
+
+Unique combination of biophysical and cultural features (like personalities) 
+
+<br>
+
+:::: {.columns}
+
+:::{.column}
+![](lehman_map.png){fig-align="left"}
+:::
+
+:::{.column}
+
+![](lehman.jpg){fig-align="right"}
+
+:::
+
+::::
+
+
+## Situation
+
+<br>
+
+:::: {.columns}
+
+:::{.column}
+
+Contextualized location of a site
+
+Location of a place relative to other places
+
+Relative situation: relative to another (specific) place
+
+
+Changing constantly due to technological, economic, or political factors.
+
+:::
+
+:::{.column}
+
+```{dot}
+
+graph G {
+  layout=neato
+  lake -- mountain;
+  lake -- field;
+  mountain -- field;
+  field -- city;
+}
+
+```
+
+
+:::
+
+::::
+
+---
+
+![José María Velasco, *Valle de México desde el Tepeyac* (1908).](velasco.png){width="80%"}
+
+
+## Region
+
+<br>
+
+Area division based on a set of criteria relevant for our research question or
+objetive.
+
+:::{incremental}
+
+* Formal: Uniformity in physical or cultural features
+
+* Functional: Based on interactions of certain type (economic trade)
+
+* Vernacular: Emerge from people's activities, ties, perceptions, and knowledge 
+of a place.
+
+:::
+
+---
+
+**Climatic**
+
+<br>
+
+![Pernreiter et al. 2018](clim_reg.jpg){fig-align="center"}
+---
+
+**Biogeographical**
+
+<br>
+
+![Biogeographic regionalization proposed by Holt et al. (2013)](biogeo.jpg){fig-align="center"}
+
+---
+
+**Political**
+
+<br>
+
+![Political division of Europe during thte Cold War Era](coldwar.png){fig-align="center"}
+
+
+# Spatial analysis
+
+<br>
+
+Focuses on exploring and explaining spatial patterns of events, processes, and
+relationships.
+
+<br>
+
+What is a pattern?
+
+Why are they important for geogpraphy?
+
+<br>
+
+:::{.incremental}
+
+* Distribution
+
+* Movement
+
+:::
+
+## Distribution
+
+<br>
+
+Spatial arrangement or configuration of observations.
+
+Distribution can be defined using its **density**, **concentration**,
+and **pattern**
+
+---
+
+**Density** refers to the frequency of events in a geographical area
+(can be expressed as a ratio)
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+* Seeds per dm³
+* COVID-19 cases per borough
+* Trees per block
+
+:::
+
+:::{.column}
+
+![](covid.png){}
+
+:::
+
+::::
+
+
+---
+
+**Concentration** refers to the configuration or distribution of of events
+or phenomena focusing on proximity.
+
+<br>
+
+* Concentrated: Close proximity (important for diseases) 
+
+* Dispersed: Scattered in space
+
+---
+
+The **pattern** is the particular geometrical configuration or arrangement of a set of events. 
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+![Tokyo subway system](tokyo_sub.png){width="80%"}
+
+:::
+
+:::{.column}
+
+![](nyc_sub.jpg){width="70%"}
+
+:::
+
+::::
+
+---
+
+![Density focuses on the number of events, concentration on their proximity, and the pattern on how they are organized.](distribution.png){fig-align="center"}
+
+## Movement
+
+<br>
+
+Movement allows to perceive changes of spatial distributions.
+
+<br>
+
+Movement  can be evaluated in terms of **distance** or **diffusion** of phenomena.
+
+## Distance {.smaller}
+
+<br>
+
+The magnitude of proximity between events or phenomena.  Can be measured, expressed, and *perceived* in multiple ways. 
+
+<br>
+
+* **Absolute**: miles, kilometers, centimeters (abstraction).
+
+* **Temporal**:
+
+  - Time to arrive from point A to B. 
+  - Integrate the geographical context like topography (surface features).
+  - Important for logistics (transportation).
+
+* **Economic**:     
+
+  - What is the cost of getting from A to B?
+  
+  - Cost distance
+
+
+---
+
+<br>
+
+**Distance friction** reduces mobility and diffusion through space.
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+![](carr_chi.jpg){}
+
+:::
+
+:::{.column}
+
+![](carr_coy.JPG){}
+:::
+
+::::
+
+--- 
+
+**Distance decay** is the attenuation or decrease of an event's or phenomenon intensity or frequency.
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+- Seed distribution
+- Radiation (from source)
+- Sound
+- Cultural patterns
+
+:::
+
+:::{.column}
+
+![Kinoshita & Woolley (2015; modified from Hayakawa, 2012)](radiation.jpg){fig-align="center" width="80%"}
+
+:::
+
+::::
+
+## Diffusion {.smaller}
+
+<br>
+
+Mechanism of distribution across space from a point of origin called **hearth**.
+
+::::{.columns}
+
+:::{.column}
+
+* Relocation diffusion: Migration in search of suitable conditions
+
+* Contiguous/contagious diffusion: Diffusion facilitated by proximity 
+
+* Hierarchical diffusion: Follows an organizational structure
+
+:::
+
+:::{.column}
+
+![](facemask.jpg){fig-align="center"}
+:::
+
+::::
+
+
+## Barriers
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+Biophysical
+
+![Dr. atl, *Valle de México desde la carretera de Cuernavaca* (1955)](dr_atl2.png){}
+
+:::
+
+:::{.column}
+
+Cultural/Economic
+
+![Diego Rivera, *Frozen Assets* (1931)](rivera.png){width="70%"}
+
+:::
+
+::::
+
+# Geographic Systems Analysis
+
+<br>
+
+<br>
+
+What is a system?
+
+Models are representations of aspects of the reality used to **describe** or **explain** a phenomenon.
+
+
+## Earth as a system
+
+<br>
+
+From the perspective of natural sciences, Earth can be viewed as a set of interacting 
+systems.
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+* Atmosphere
+* Lithosphere
+* Biosphere (humans too!)
+* Hydrosphere:
+  - Cryosphere
+
+:::
+
+:::{.column}
+
+![](esystem.png){fig-align="center"}
+
+:::
+
+::::
+
+## Geographic grid
+
+<br>
+
+System of lines that functions as a geographical reference for positioning. 
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+The grid includes:
+
+* Equator 
+* Latitude
+* Longitude
+
+:::
+
+:::{.column}
+
+![](equator.png){fig-align="center"}
+
+:::
+
+::::
+
+
+## Latitude {.smaller}
+
+<br>
+
+* Angular distance from the equator to any point to the north or south. 
+
+* The line connecting all points of the same latitude is called a **parallel**.
+
+* Infinite number of parallels.
+
+::::{.columns}
+
+:::{.column}
+
+![Measured in degrees (360°), minutes (60), 
+and seconds (60)](latitude.png){fig-align="center"}
+
+:::
+
+:::{.column}
+
+![Ranges from 90 north to 90 south crossing the 0° (equator).](latitude2.png){fig-align="center"}
+
+:::
+
+::::
+
+## Longitude {.smaller}
+
+<br>
+
+:::: {.columns}
+
+:::{.column}
+
+* The angular distance measured east and west with reference to the **prime meridian**; the meridian that crosses the Royal Observatory in Greenwich, England.
+
+* The prime meridian was chosen in 1884.
+
+* Constituted by meridians that range from 0° to 180°.
+
+* Also measured in degrees, minutes, and seconds.
+
+:::
+
+:::{.column}
+
+![](longitude.png){fig-align="right"}
+
+:::
+
+::::
+
+---
+
+
+![](grid.png){fig-align="center"}
+
+## Time zones {.smaller}
+
+<br>
+
+* Useful for homogenizing time differences across long east-west distances.
+
+* Based on the equivalence of the distance traveled by the sun in a day
+
+> 1 day = 24 hours = 360° 
+
+> 1 hour = 15°
+
+* Time is standardized relative to the Greenwich Mean Time (GMT) at 0° longitude by 15°.
+
+
+---
+
+Time standardization is done eastward by one hour (15°). 
+
+Political and economic decisions 'bend' the boundaries of time zones.
+
+International date line marks the difference between one calendar day and another.
+
+<br>
+
+![](time_zones.png){fig-align="center"}
+
+# Mapping and its properties
+
+---
+
+<br>
+
+Maps are models of the Earth's surface and its features. They are useful for regional, urban, and financial planning, resource management, military operations, risk assessment, etc.
+
+<br>
+
+* Two-dimensional: X and Y coordinates.
+
+* Topical: Focus on certain type of information.
+
+
+## Elements
+
+<br>
+
+* Title: Name of the map
+
+* **Scale**: The scale of a map is an element used to inform about the size, distance, or area equivalences between reality and the representation
+
+* North arrow
+
+* Legend (if applicable): Summary of visual features displayed (colors, shapes, shades, etc.)
+
+* Reference grid: Enable locating the sites displayed in a particular  **projection**
+
+---
+
+![](scale.png){fig-align="center"}
+
+## Small scale 
+
+![](fuji_small.png){fig-align="center"}
+
+
+## Large scale
+
+![](fuji_large.png){fig-align="center"}
+
+
+## Projection {.smaller}
+
+<br>
+
+* It is impossible to fit a 3D reality into a flat surface without **distortions**.
+
+* Distortions are higher for smaller scales. Types include: 
+
+  - Size and distance: Proportions are not constant. 
+  - Shape and orientation: Deformations
+
+* The projection of a map determines how the elements we want to display are represented.
+
+* Map projections correct **some** distortions.
+
+* Map projections are case specific. What do I want to show? What is fundamental or relevant?
+
+
+## Conformal projection {.smaller}
+
+<br>
+
+:::: {.columns}
+
+:::{.column}
+
+  * Keeps shape and orientation
+  
+  * Distorts size towards the poles
+  
+  * Latitudinal and longitudinal lines form a rectangular grid
+  
+  * Maintains orientation (North is always up)
+
+:::
+
+:::{.column}
+
+![Mercator projection is one of the most used](mercator.png){fig-align="center"}
+
+:::
+
+::::
+
+## Equal-area projection {.smaller}
+
+<br>
+
+Maintains size but distorts shape. Distortion alter distances and shape (especially in polar regions).
+
+![](equal.png){fig-align="center"}
+
+## Azimuthal projection {.smaller}
+
+<br>
+
+Displays Earth's surface as it would be seen from a single point from above.
+
+<br>
+
+![](azimuthal.png){fig-align="center"}
+
+# Types of maps
+
+## Dot distribution
+
+<br>
+
+![Gutierrez *et al*. 2018](m_dot.png){fig-align="center"}
+
+## Qualitative
+
+<br>
+
+![](m_qual.png){fig-align="center"}
+
+## Mixed
+
+<br>
+
+![Savo *et al*. 2016](m_mix.png){fig-align="center"}
+
+## Choropleth {.smaller}
+
+<br>
+
+Combine qualitative and quantitative features using color, shade, or transparency. 
+
+![Karki et al. 2019](m_chor.png){fig-align="center"}
+
+## Flow {.smaller}
+
+<br>
+
+Allow illustrating connections between places.
+
+![https://www.data-to-viz.com/story/MapConnection.html](m_flow.png){fig-align="center"}
+
+
+## Cartograms {.smaller}
+
+
+![](m_carto.gif){fig-align="center"}
+
+
+## Isoline {.smaller}
+
+<br>
+
+:::: {.columns}
+
+:::{.column}
+
+![](m_iso1.jpg){fig-align="center" width="70%"}
+
+:::
+
+:::{.column}
+
+Useful for showing changes in physical variables like precipitation, temperature, and elevation
+
+:::
+
+::::
+
+## Isoline {.smaller}
+
+Topographic charts combine this and other types of information.
+
+![](cart_topo.gif){fig-align="center"}
+
+# Geographic Information Technology
+
+---
+
+Increases in computational power and affordability allowed shifting from analog to digital maps. 
+
+<br>
+
+Two main types of technologies:
+
+* Remote-sensing satellites
+
+* Global positioning systems (GPS)
+
+## Satellites and remote sensing {.smaller}
+
+<br>
+
+:::: {.columns}
+
+::: {.column}
+
+* Multiple fleets satellites orbit the Earth with different kinds of instruments.
+
+* The smallest area unit at which a satellite gathers information is called **picture element** or **pixel**.
+
+* The smallest pixel size that can be detected by an instrument is the **resolution of the scanner**.
+
+* Can range from 5 x 5 m to 100 x 100 m.
+
+* Cover *paths* periodically.
+
+:::
+
+::: {.column}
+
+![Higher resolution = more detail](pixel.png){fig-align="center"}
+:::
+
+::::
+
+
+## Satellites and remote sensing {.smaller}
+
+<br>
+
+::::{.columns}
+
+:::{.column}
+
+* Landsat (NASA and USGS): 
+  - First mission in 1972 
+  - 30 m resolution.
+  - Most recent: Landsat 9 (2021)
+
+<br>
+
+* European Space Agency (ESA)
+
+  - Multiple resolutions
+  - RapidEye
+  - SPOT 
+  - Sentinel
+  - Fewer years 
+
+:::
+
+:::{.column}
+
+![](sat.gif){}
+
+:::
+
+::::
+
+## Landsat {.smaller}
+
+:::: {.columns}
+
+:::{.column}
+![](landsat1.png){fig-align="left"}
+:::
+
+:::{.column}
+
+![](landsat.gif){fig-align="right"}
+
+:::
+
+::::
+
+:::aside
+
+https://landsat.gsfc.nasa.gov/satellites/landsat-9/
+
+:::
+
+## European Spatial Agency
+
+<br>
+
+![https://earth.esa.int/eogateway/missions](esa.png){fig-align="center"}
+
+
+## Global Positioning Systems (GPS) {.smaller}
+
+<br>
+
+* Developed by the U.S. military. 
+
+* Fleet of satellites orbiting Earth that measure distances based on the time it takes to receive a previously sent signal.
+
+* Different degrees of precision: from meters to centimeters.
+
+* GPS receivers are widely available as standalone devices or included in mobile phones, computers, cars, etc.
+
+
+## Geographic Information Systems {.smaller}
+
+<br>
+
+:::: {.columns}
+
+:::{.column}
+
+* GIS are a kind of software that allow the exploration, manipulation, and visualization of spatial and non-spatial information.
+
+Three type of data:
+
+* Spatial
+
+  - Vector data 
+  - Raster data: Based on pixels that can have one or more values attached. 
+
+* Non-spatial: Standalone Information that can be linked to spatial features based on shared information (country or state name or identifiers, census track codes, or geometric relations).
+
+:::
+
+:::{.column}
+
+![](gis.png){fig-align="center"}
+
+:::
+
+::::
+
+
+## Raster data
+
+:::: {.columns}
+
+:::{.column}
+
+![](m_pue.png){fig-align="center"}
+
+:::
+
+:::{.column}
+
+![](remote.png){fig-align="center"}
+
+:::
+
+::::
+
+
+## Vector data {.smaller}
+
+:::: {.columns}
+
+:::{.column}
+
+Composed of
+
+* Points: 
+
+  - Comprised by X and Y coordinates. 
+
+  - Events, individuals, or locations.
+
+* Lines:
+  - Strokes between two or multiple points. 
+  - Rivers, boundaries, isolines.
+  
+* Polygons: 
+  - Areas delimited by points and strokes.
+  - Territory, area of influence, lakes, land masses, type of vegetation.
+
+:::
+
+:::{.column}
+
+![Elemental vector data (wikipedia)](vector.png){fig-align="center"}
+
+:::
+
+::::
+
+# Next week
+
+* Read chapter 2.
+
+* Prepare your glossary
+
+* Writing assignment in blackboard.
